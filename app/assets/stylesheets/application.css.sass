@@ -1,0 +1,116 @@
+//
+// This is a manifest file that'll be compiled into application.css, which will include all the files
+// listed below.
+//
+// Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+// or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+//
+// You're free to add application-wide styles to this file and they'll appear at the top of the
+// compiled file, but it's generally better to create a new file per style scope.
+//
+//= require 'bootstrap'
+//= require 'bootstrap-responsive'
+//= require 'flat-ui'
+//= require_self
+
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700,700italic,900,400italic,300")
+
+body
+  background-color: #fff
+
+header
+  background-color: #ECEEF0
+  .logo
+    display: block
+    text-indent: -9999em
+    background: image-url('logo.png') no-repeat 20px 15px
+    width: 120px
+    height: 44px
+    padding: 0 0 20px 15px
+
+h3
+  font-size: 42px
+  line-height: 1.25
+
+
+.flips
+  margin: 0
+  padding: 0
+
+  li
+    list-style: none
+    padding: 0
+    margin: 0
+    &.flip
+      margin: 40px 0 60px
+      background: #EFF5F5
+      padding: 40px 0
+      border-radius: 6px
+
+  .source
+    margin: 0
+    strong
+      font-size: 24px
+
+    .btn
+      padding-bottom: 15px
+      &:hover
+        background-color: #37495D
+        p, span
+          opacity: 0.8
+
+    .language
+      text-transform: uppercase
+
+    a
+      margin-top: 0
+
+    .btn
+      color: #EEF5F5
+      border-radius: 6px 0 0 6px
+      box-shadow: 0 5px #303E4E
+      &.destination
+        border-radius: 0 6px 6px 0
+
+  .type
+    padding: 30px 10px 0
+    background: #2c3e50 image-url('arrow.png') no-repeat 0 0
+    box-shadow: 0 5px #303E4E
+    color: #fff
+    i
+      margin: 30% 0 0
+      font-size: 40px
+      display: block
+
+
+      text-align: center
+
+    small
+      display: block
+      text-align: center
+      padding-top: 13px
+      font-size: 10px
+      margin-bottom: 15px
+      text-transform: uppercase
+    padding-top: 10px
+
+  .actions
+    margin: 0
+    ul
+      padding: 0
+      margin: 0 0 5px
+      li
+        display: inline
+
+
+    p
+      font-size: 14px
+      padding: 0 0 0 10px
+      line-height: 1.5
+      margin: 0
+      color: #7f8c8d
+
+footer
+  margin-top: 80px
+
+
