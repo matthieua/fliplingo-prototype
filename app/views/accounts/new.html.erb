@@ -15,11 +15,11 @@
         <%= form_for @account do |f| %>
         <div class="row">
           <div class="span2">
-            <%= f.label :name, 'Username' %>
+            <%= f.label :name, 'twitter' %>
           </div>
           <div class="input-prepend">
             <span class="add-on">@</span>
-            <%= f.text_field :name, id: "prependedInput-01" %>
+            <%= f.text_field :name, id: "prependedInput-01", placeholder: 'username' %>
           </div>
         </div>
 
