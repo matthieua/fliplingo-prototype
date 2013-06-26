@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="span2">
+      <ul class="nav nav-list nav-list-vivid">
+        <li class="active">
+          <%= link_to 'Your Flips', flip_index_path %>
+        </li>
+        <li class="nav-header">Accounts</li>
+        <% current_user.accounts.each do |account| %>
+          <li>
+            <%= link_to "@#{account.name}", account_path(account) %>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to new_account_path do %>
+            <i class="fui-plus"></i> Account</a>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="span10">
+      <div class="row-fluid">
+        <div class="span9">
+          <h3>YOUR FLIPS</h3>
+          <p>A Flip allows you to automatically translate and publish your tweets in different languages.</p>
+        </div>
+        <div class="pull-right">
+          <%= link_to new_flip_path, class: 'btn btn-huge btn-primary' do %>
+            <i class="fui-plus-inverted"></i>
+            Create a Flip
+          <% end %>
+        </div>
+      </div>
+
+      <ul class="flips">
+        <% current_user.flips.each do |flip| %>
+        <% from = Account.find(flip.from) %>
+        <% to = Account.find(flip.to) %>
+        <li class="row flip">
+          <ul class="span7 translation">
+            <li class="span3 source">
+              <%= link_to account_path(from), class: "btn btn-small btn-inverse btn-block" do %>
+                <p><strong>@<%= from.name  %></strong></p>
+                <span class="language label label-large label-<%= from.language.css_class_name %>"><%= from.language.name %></span>
+              <% end %>
+            </li>
+            <li class="span1 type">
+              <i class="fui-gear"></i>
+              <small>
+                <%= flip.friendly_kind %>
+              </small>
+            </li>
+            <!-- /.type -->
+            <li class="span3 source">
+              <%= link_to account_path(from), class: "btn btn-small btn-inverse btn-block destination" do %>
+                <p><strong>@<%= to.name %></strong></p>
+                <span class="language label label-large label-<%= to.language.css_class_name %>">
+                  <%= to.language.name %>
+                </span>
+              <% end %>
+            </li>
+            <!-- /.source -->
+          </ul>
+          <!-- /.translation -->
+          <div class="actions span3">
+            <ul>
+              <li>
+                <%= link_to pause_flip_path(flip), class: 'btn btn-huge mlm' do %>
+                  <i class="fui-pause"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to edit_flip_path(flip), class: 'btn btn-huge mlm' do %>
+                  <i class="fui-new"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to activity_flip_path(flip), class: 'btn btn-huge mlm' do %>
+                  <i class="fui-new"></i>
+                <% end %>
+              </li>
+            </ul>
+            <p>9 translations processed</p>
+            <p>Last processed 18 minutes ago</p>
+          </div>
+          <!-- /.actions -->
+
+        </li>
+        <% end %>
+        <!-- /.flip -->
+      </ul>
+      <!-- /.flips -->
+    </div>
+  </div>
+</div>
