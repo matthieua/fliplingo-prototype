@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="span2">
-      <%= render partial: 'shared/sidebar', locals: { active: '', flip: @flip } %>
+      <%= render partial: 'shared/sidebar', locals: { active: '' } %>
     </div>
 
     <div class="span10">
       <div class="row-fluid">
         <div class="span9">
-          <h3>CREATE A FLIP</h3>
-          <p>Connect your Twitter accounts in order to automate translations in between them.</p>
+          <h3>EDIT YOUR FLIP</h3>
         </div>
       </div>
+
       <%= render partial: 'form', locals: { flip: @flip }  %>
+
     </div>
   </div>
 </div>
