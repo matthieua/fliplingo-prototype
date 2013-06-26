@@ -11,9 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130626103314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: true do |t|
+    t.string   "name",        null: false
+    t.string   "timezone",    null: false
+    t.integer  "language_id", null: false
+    t.integer  "user_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accounts", ["language_id"], name: "index_accounts_on_language_id", using: :btree
+  add_index "accounts", ["user_id"], name: "index_accounts_on_user_id", using: :btree
+
+  create_table "flips", force: true do |t|
+    t.integer  "from",       null: false
+    t.integer  "to",         null: false
+    t.string   "kind",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id",    null: false
+  end
+
+  add_index "flips", ["user_id"], name: "index_flips_on_user_id", using: :btree
+
+  create_table "languages", force: true do |t|
+    t.string   "name",         null: false
+    t.string   "abbreviation", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string  "email",               null: false
+    t.integer "credits", default: 0, null: false
+  end
 
 end
