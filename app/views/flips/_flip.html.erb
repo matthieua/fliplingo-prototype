@@ -9,9 +9,13 @@
       <% end %>
     </li>
     <li class="span1 type">
+      <% if flip.kind == 'computer' %>
       <i class="fui-gear"></i>
+      <% else %>
+      <i class="fui-user"></i>
+      <% end %>
       <small>
-        <%= flip.friendly_kind %>
+        <%= flip.kind %>
       </small>
     </li>
     <!-- /.type -->

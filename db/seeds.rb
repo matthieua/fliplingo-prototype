@@ -22,7 +22,7 @@ Account.create([
 ])
 
 Flip.create([
-  { from: Account.find_by_name('betahaus').id,  to: Account.find_by_name('betahaus_de').id, kind: 'ht', user_id: mathias_id },
-  { from: Account.find_by_name('betahaus').id,  to: Account.find_by_name('betahaus_es').id, kind: 'mt', user_id: mathias_id },
-  { from: Account.find_by_name('betahaus_de').id,  to: Account.find_by_name('betahaus_es').id, kind: 'mt', user_id: mathias_id }
+  { from: Account.find_by_name('betahaus').id,  to: Account.find_by_name('betahaus_de').id, kind: 'human', user_id: mathias_id },
+  { from: Account.find_by_name('betahaus').id,  to: Account.find_by_name('betahaus_es').id, kind: 'computer', user_id: mathias_id },
+  { from: Account.find_by_name('betahaus_de').id,  to: Account.find_by_name('betahaus_es').id, kind: 'computer', user_id: mathias_id }
 ])

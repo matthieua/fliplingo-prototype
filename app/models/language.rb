@@ -7,6 +7,8 @@ class Language < ActiveRecord::Base
       'important'
     when 'german'
       'warning'
+    when 'french'
+      ''
     else
       'info'
     end

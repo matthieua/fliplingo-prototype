@@ -11,8 +11,6 @@ class FlipsController < ApplicationController
     @flip      = Flip.new flip_params
     @flip.user = current_user
 
-    debugger
-
     if @flip.save
       redirect_to flips_path
     else
