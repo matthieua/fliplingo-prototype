@@ -26,5 +26,5 @@
 
 
 $ ->
-  $("select").selectpicker({style: 'btn ', menuStyle: 'dropdown-inverse'})
+  $("select").selectpicker({style: 'btn btn-inverse', menuStyle: 'dropdown-inverse'})
 

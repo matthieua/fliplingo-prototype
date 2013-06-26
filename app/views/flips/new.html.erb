@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="span2">
+      <%= render partial: 'shared/sidebar', locals: { active: '' } %>
+    </div>
+
+    <div class="span10">
+      <div class="row-fluid">
+        <div class="span9">
+          <h3>CONNECT AN ACCOUNT</h3>
+          <p>Connec your Twitter accounts in order to automate translations in between them.</p>
+        </div>
+      </div>
+      <%= form_for @flip do |f| %>
+
+      <div class="row">
+        <div class="span2">
+          <p><%= f.label :from %></p>
+        </div>
+        <%= f.select :from, options_from_collection_for_select(current_user.accounts, "id", "name") %>
+      </div>
+
+      <div class="row">
+        <div class="span2">
+          <p><%= f.label :to %></p>
+        </div>
+        <%= f.select :to, options_from_collection_for_select(current_user.accounts, "id", "name") %>
+      </div>
+
+      <div class="row">
+        <div class="span2">
+          <p><%= f.label :kind, 'Quality' %></p>
+        </div>
+        <%= f.select :kind, options_for_select(['computer', 'human']) %>
+
+      </div>
+
+      <div class="row">
+        <div class="span2">
+          <p><%= f.label :notification %></p>
+        </div>
+        <%= f.check_box :notification %>
+      </div>
+      <div class="row">
+        <span class="span2"> </span>
+        <%= f.submit value: 'Create', class: "btn span3 btn-primary" %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
