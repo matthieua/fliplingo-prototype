@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    @current_user ||= User.where(email: 'mathias@betahaus.de').first
+    @current_user ||= User.where(email: 'contact@betahaus.com').first
   end
   helper_method :current_user
 end
