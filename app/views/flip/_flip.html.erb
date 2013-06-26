@@ -1,0 +1,52 @@
+<% from = Account.find(flip.from) %>
+<% to = Account.find(flip.to) %>
+<li class="row flip">
+  <ul class="span7 translation">
+    <li class="span3 source">
+      <%= link_to account_path(from), class: "btn btn-small btn-inverse btn-block" do %>
+        <p><strong>@<%= from.name  %></strong></p>
+        <span class="language label label-large label-<%= from.language.css_class_name %>"><%= from.language.name %></span>
+      <% end %>
+    </li>
+    <li class="span1 type">
+      <i class="fui-gear"></i>
+      <small>
+        <%= flip.friendly_kind %>
+      </small>
+    </li>
+    <!-- /.type -->
+    <li class="span3 source">
+      <%= link_to account_path(from), class: "btn btn-small btn-inverse btn-block destination" do %>
+        <p><strong>@<%= to.name %></strong></p>
+        <span class="language label label-large label-<%= to.language.css_class_name %>">
+          <%= to.language.name %>
+        </span>
+      <% end %>
+    </li>
+    <!-- /.source -->
+  </ul>
+  <!-- /.translation -->
+  <div class="actions span3">
+    <ul>
+      <li>
+        <%= link_to pause_flip_path(flip), class: 'btn btn-huge mlm' do %>
+          <i class="fui-pause"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to edit_flip_path(flip), class: 'btn btn-huge mlm' do %>
+          <i class="fui-new"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to activity_flip_path(flip), class: 'btn btn-huge mlm' do %>
+          <i class="fui-new"></i>
+        <% end %>
+      </li>
+    </ul>
+    <p>9 translations processed</p>
+    <p>Last processed 18 minutes ago</p>
+  </div>
+  <!-- /.actions -->
+</li>
+<!-- /.flip -->
