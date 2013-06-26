@@ -1,0 +1,47 @@
+  <div class="container">
+    <div class="row">
+      <div class="span2">
+        <%= render partial: 'shared/sidebar', locals: { active: 'new account' } %>
+      </div>
+
+      <div class="span10">
+        <div class="row-fluid">
+          <div class="span9">
+            <h3>CONNECT AN ACCOUNT</h3>
+            <p>Connec your Twitter accounts in order to automate translations in between them.</p>
+          </div>
+        </div>
+
+        <%= form_for @account do |f| %>
+        <div class="row">
+          <div class="span2">
+            <%= f.label :name, 'Username' %>
+          </div>
+          <div class="input-prepend">
+            <span class="add-on">@</span>
+            <%= f.text_field :name, id: "prependedInput-01" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="span2">
+            <p><%= f.label :language_id %></p>
+          </div>
+          <%= f.select "language_id", options_from_collection_for_select(@languages, "id", "friendly_name") %>
+        </div>
+
+        <div class="row">
+          <div class="span2">
+            <p><%= f.label :timezone %></p>
+          </div>
+          <%= f.select :timezone, options_for_select(@timezones)%>
+        </div>
+
+        <div class="row">
+          <span class="span2"> </span>
+          <%= f.submit value: 'Connect', class: "btn span3 btn-primary" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

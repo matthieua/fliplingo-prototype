@@ -54,8 +54,8 @@ FliplingoPrototype::Application.routes.draw do
   #     resources :products
   #   end
 
-  resources :account
-  resources :flip do
+  resources :accounts
+  resources :flips do
     member do
       get :activity
       get :pause
@@ -63,5 +63,5 @@ FliplingoPrototype::Application.routes.draw do
     end
   end
 
-  root "profiles#show"
+  root "flips#index"
 end

@@ -23,3 +23,8 @@
 #= require 'jquery.stacktable'
 #= require 'custom'
 #= require_self
+
+
+$ ->
+  $("select").selectpicker({style: 'btn ', menuStyle: 'dropdown-inverse'})
+

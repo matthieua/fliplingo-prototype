@@ -1,6 +1,6 @@
 <ul class="nav nav-list nav-list-vivid">
-  <li class="active">
-    <%= link_to 'Your Flips', flip_index_path %>
+  <li class="<%= active == 'your flips' ? 'active' : '' %>">
+    <%= link_to 'Your Flips', flips_path %>
   </li>
   <li class="nav-header">Accounts</li>
   <% current_user.accounts.each do |account| %>
@@ -8,7 +8,7 @@
       <%= link_to "@#{account.name}", account_path(account) %>
     </li>
   <% end %>
-  <li>
+  <li class="<%= active == 'new account' ? 'active' : '' %>">
     <%= link_to new_account_path do %>
       <i class="fui-plus"></i> Account</a>
     <% end %>

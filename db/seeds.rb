@@ -1,12 +1,8 @@
 Language.create([
   { name: 'english',    abbreviation: 'en' },
-  { name: 'french',     abbreviation: 'fr' },
+  { name: 'french',    abbreviation: 'fr' },
   { name: 'german',     abbreviation: 'de' },
-  { name: 'spanish',    abbreviation: 'es' },
-  { name: 'italian',    abbreviation: 'it' },
-  { name: 'portuguese', abbreviation: 'po' },
-  { name: 'japanese',   abbreviation: 'jp' },
-  { name: 'chinese',    abbreviation: 'ch' }
+  { name: 'spanish',    abbreviation: 'es' }
 ])
 
 User.create([

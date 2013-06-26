@@ -1,4 +1,4 @@
-class FlipController < ApplicationController
+class FlipsController < ApplicationController
   def index
     @flips = current_user.flips
   end
