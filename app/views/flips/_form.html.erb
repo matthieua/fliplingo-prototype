@@ -1,30 +1,26 @@
 <%= form_for flip do |f| %>
   <div class="row">
-    <div class="span2">
-      <p><%= f.label :from %></p>
-    </div>
+    <p class="span2"><%= f.label :from %></p>
     <%= f.select :from, options_from_collection_for_select(current_user.accounts, "id", "name", flip.from) %>
   </div>
 
   <div class="row">
-    <div class="span2">
-      <p><%= f.label :to %></p>
-    </div>
+    <p class="span2"><%= f.label :to %></p>
     <%= f.select :to, options_from_collection_for_select(current_user.accounts, "id", "name", flip.to)  %>
   </div>
 
   <div class="row">
-    <div class="span2">
-      <p><%= f.label :kind, 'Quality' %></p>
-    </div>
+    <p class="span2"><%= f.label :kind, 'Quality' %></p>
     <%= f.select :kind, ['computer', 'human']  %>
+  </div>
 
+  <div class="row instructions">
+    <p class="span2"><%= f.label :instructions %></p>
+    <%= f.text_area :instructions %>
   </div>
 
   <div class="row">
-    <div class="span2">
-      <p><%= f.label :notification %></p>
-    </div>
+    <p class="span2"><%= f.label :notification %></p>
     <%= f.check_box :notification %>
   </div>
   <div class="row">
@@ -32,3 +28,22 @@
     <%= f.submit value: 'Create', class: "btn span3 btn-primary" %>
   </div>
 <% end %>
+
+
+
+<script>
+  $(function() {
+    $flipInstructionsWrapper = $('.instructions').first();
+    $flipKind                = $('#flip_kind');
+    if ($('#flip_kind').val() === 'human') {
+      $flipInstructionsWrapper.show();
+    }
+
+    $flipKind.change(function() {
+      $flipInstructionsWrapper.toggle();
+    });
+
+
+  });
+
+</script>

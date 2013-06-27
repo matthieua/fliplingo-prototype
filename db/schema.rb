@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130626143422) do
+ActiveRecord::Schema.define(version: 20130627101540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20130626143422) do
     t.datetime "updated_at"
     t.integer  "user_id",                     null: false
     t.boolean  "notification", default: true, null: false
+    t.text     "instructions"
   end
 
   add_index "flips", ["user_id"], name: "index_flips_on_user_id", using: :btree

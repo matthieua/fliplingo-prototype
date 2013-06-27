@@ -35,7 +35,7 @@ class FlipsController < ApplicationController
   private
 
   def flip_params
-    params.permit(:flip => [:from, :to, :kind, :notification])[:flip]
+    params.permit(:flip => [:from, :to, :kind, :notification, :instructions])[:flip]
   end
 end
 
