@@ -10,7 +10,7 @@
           <%= render partial: 'nav', locals: { tab: 'activity' } %>
 
           <section class="translation-widget">
-            <textarea placeholder="Type something in your language, we'll translate it for you..."></textarea>
+            <textarea placeholder="Type something in plain <%= current_user.language.capitalize %>, we'll translate it and publish it for you..."></textarea>
 
             <ul>
               <li>
