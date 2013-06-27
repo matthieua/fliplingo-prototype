@@ -7,18 +7,7 @@
     <div class="span10">
       <div class="row-fluid">
         <div class="span9">
-          <h3>@<%= @account.name.upcase %> ACTIVITY</h3>
-          <ul class="secondary-nav">
-            <li class="active"><%= link_to 'Activity', account_path(@account) %></li>
-            <li><%= link_to 'Settings', edit_account_path(@account) %></li>
-          </ul>
-
-          <ul>
-            <li>Language: <%= @account.language.name.capitalize %></li>
-            <li>Timezone: <%= @account.timezone.capitalize %></li>
-          </ul>
-
-
+          <%= render partial: 'nav', locals: { tab: 'activity' } %>
 
           <textarea rows="5" placeholder="Type something in your language, we'll translate it for you..."></textarea>
 

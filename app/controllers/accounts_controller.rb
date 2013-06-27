@@ -29,7 +29,7 @@ class AccountsController < ApplicationController
     load_account
 
     if @account.update_attributes(account_params)
-      redirect_to edit_account_path(@account)
+      redirect_to account_path(@account)
     else
       render :edit
     end

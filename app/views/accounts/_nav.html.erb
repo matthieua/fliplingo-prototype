@@ -1,0 +1,10 @@
+<h3>@<%= "#{@account.name.upcase} #{tab}" %></h3>
+
+<ul class="account-details row">
+  <li>Language : <%= @account.language.name.capitalize %></li>
+  <li>Timezone : <%= @account.timezone.capitalize %></li>
+</ul>
+<ul class="account-nav row">
+  <li class="<%= tab == 'activity' ? 'active' : '' %> span2"><%= link_to 'Activity', account_path(@account) %></li>
+  <li class="<%= tab == 'settings' ? 'active' : '' %> span2"><%= link_to 'Settings', edit_account_path(@account) %></li>
+</ul>

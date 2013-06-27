@@ -7,11 +7,7 @@
     <div class="span10">
       <div class="row-fluid">
         <div class="span9">
-          <h3>@<%= @account.name.upcase %> SETTINGS</h3>
-          <ul class="secondary-nav">
-            <li><%= link_to 'Activity', account_path(@account) %></li>
-            <li class="active"><%= link_to 'Settings', edit_account_path(@account) %></li>
-          </ul>
+          <%= render partial: 'nav', locals: { tab: 'settings' } %>
         </div>
       </div>
         <%= render partial: 'form', locals: { account: @account, languages: @languages, timezones: @timezones}  %>
