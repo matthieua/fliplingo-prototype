@@ -35,6 +35,13 @@ class FlipsController < ApplicationController
     load_flip
   end
 
+  def destroy
+    load_flip
+    @flip.destroy
+
+    redirect_to flips_path
+  end
+
   private
 
   def flip_params
