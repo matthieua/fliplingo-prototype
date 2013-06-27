@@ -24,3 +24,17 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(function() {
+    $('.toggle-pause').on('click', function(event) {
+      event.preventDefault();
+      $icon = $(this).find('i').first()
+      if ($icon.hasClass('fui-pause')) {
+        $icon.removeClass('fui-pause').addClass('fui-play');
+      } else {
+        $icon.addClass('fui-pause').removeClass('fui-play');
+      }
+    });
+  });
+</script>
