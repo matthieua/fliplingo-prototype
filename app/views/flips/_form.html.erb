@@ -21,11 +21,11 @@
 
   <div class="row">
     <p class="span2"><%= f.label :notification %></p>
-    <%= f.check_box :notification %>
+    <%= f.select :notification, ['yes', 'no']  %>
   </div>
   <div class="row">
     <span class="span2"> </span>
-    <%= f.submit value: 'Create', class: "btn span3 btn-primary" %>
+    <%= f.submit class: "btn span3 btn-primary" %>
   </div>
 <% end %>
 

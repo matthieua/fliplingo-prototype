@@ -1,0 +1,33 @@
+<%= form_for account do |f| %>
+<% if account.new_record? %>
+<div class="row">
+  <div class="span2">
+    <%= f.label :name, 'twitter' %>
+  </div>
+
+  <div class="input-prepend">
+    <span class="add-on">@</span>
+    <%= f.text_field :name, id: "prependedInput-01", placeholder: 'username' %>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="span2">
+    <p><%= f.label :language_id %></p>
+  </div>
+  <%= f.select "language_id", options_from_collection_for_select(languages, "id", "friendly_name", account.language.try(:id)) %>
+</div>
+
+<div class="row">
+  <div class="span2">
+    <p><%= f.label :timezone %></p>
+  </div>
+  <%= f.select :timezone, options_for_select(timezones, account.timezone.try(:capitalize))%>
+</div>
+
+<div class="row">
+  <span class="span2"> </span>
+  <%= f.submit class: "btn span3 btn-primary" %>
+</div>
+<% end %>

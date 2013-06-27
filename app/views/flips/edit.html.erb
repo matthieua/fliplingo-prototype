@@ -13,8 +13,11 @@
         </div>
 
         <%= render partial: 'form', locals: { flip: @flip }  %>
+        <hr>
         <div class="span3">
-          <%= button_to "Delete flip", @flip, :method => :delete, class: 'delete btn  btn-block btn-danger' %>
+          <%= button_to @flip, :method => :delete, class: 'delete btn  btn-block btn-danger' do %>
+          <i class="fui-trash"></i> Delete Flip
+          <% end %>
         </div>
       </div>
     </div>

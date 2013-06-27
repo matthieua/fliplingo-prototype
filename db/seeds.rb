@@ -8,7 +8,7 @@ Language.create([
   { name: "spanish", abbreviation: "es" }
 ])
 
-User.create(email: email)
+User.create(email: email, language: 'english')
 
 
 mathias_id = User.find_by_email(email).id

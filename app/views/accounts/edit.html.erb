@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="span2">
+      <%= render partial: 'shared/sidebar', locals: { active: @account.name } %>
+    </div>
+
+    <div class="span10">
+      <div class="row-fluid">
+        <div class="span9">
+          <h3>@<%= @account.name.upcase %> SETTINGS</h3>
+          <ul class="secondary-nav">
+            <li><%= link_to 'Activity', account_path(@account) %></li>
+            <li class="active"><%= link_to 'Settings', edit_account_path(@account) %></li>
+          </ul>
+        </div>
+      </div>
+        <%= render partial: 'form', locals: { account: @account, languages: @languages, timezones: @timezones}  %>
+        <hr>
+
+        <div class="span3">
+          <%= button_to 'Reconnect Account', reconnect_account_path(@account), { :method => :put, class: 'reconnect btn btn-block btn-warning'} %>
+
+          <%= button_to @account, :method => :delete, class: 'delete btn btn-block btn-danger', data: { confirm: "Are you sure?" }  do %>
+          <i class="fui-trash"></i> Delete Account
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+

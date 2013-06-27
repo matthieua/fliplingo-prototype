@@ -54,7 +54,12 @@ FliplingoPrototype::Application.routes.draw do
   #     resources :products
   #   end
 
-  resources :accounts
+  resources :accounts do
+    member do
+      put :reconnect
+    end
+  end
+
   resources :flips do
     member do
       get :activity

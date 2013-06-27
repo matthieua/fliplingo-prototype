@@ -12,36 +12,7 @@
         </div>
       </div>
 
-      <%= form_for @account do |f| %>
-      <div class="row">
-        <div class="span2">
-          <%= f.label :name, 'twitter' %>
-        </div>
-        <div class="input-prepend">
-          <span class="add-on">@</span>
-          <%= f.text_field :name, id: "prependedInput-01", placeholder: 'username' %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="span2">
-          <p><%= f.label :language_id %></p>
-        </div>
-        <%= f.select "language_id", options_from_collection_for_select(@languages, "id", "friendly_name") %>
-      </div>
-
-      <div class="row">
-        <div class="span2">
-          <p><%= f.label :timezone %></p>
-        </div>
-        <%= f.select :timezone, options_for_select(@timezones)%>
-      </div>
-
-      <div class="row">
-        <span class="span2"> </span>
-        <%= f.submit value: 'Connect', class: "btn span3 btn-primary" %>
-      </div>
-      <% end %>
+      <%= render partial: 'form', locals: { account: @account, languages: @languages, timezones: @timezones}  %>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 class Language < ActiveRecord::Base
-  default_scope order('name ASC')
+  default_scope -> { order('name ASC') }
 
   def css_class_name
     case name

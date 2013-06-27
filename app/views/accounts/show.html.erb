@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="span2">
+      <%= render partial: 'shared/sidebar', locals: { active: @account.name } %>
+    </div>
+
+    <div class="span10">
+      <div class="row-fluid">
+        <div class="span9">
+          <h3>@<%= @account.name.upcase %> ACTIVITY</h3>
+          <ul class="secondary-nav">
+            <li class="active"><%= link_to 'Activity', account_path(@account) %></li>
+            <li><%= link_to 'Settings', edit_account_path(@account) %></li>
+          </ul>
+
+          <ul>
+            <li>Language: <%= @account.language.name.capitalize %></li>
+            <li>Timezone: <%= @account.timezone.capitalize %></li>
+          </ul>
+
+
+
+          <textarea rows="5" placeholder="Type something in your language, we'll translate it for you..."></textarea>
+
+          Translation:
+          <input type="radio" name="kind" value="computer" checked>Computer<br>
+          <input type="radio" name="kind" value="human"> Human<br>
+          <input type="radio" name="kind" value="none">No Thanks
+          <button>Tweet</button>
+
+          <ul class="tweets">
+            <li>
+              <div class="tweet">
+                <p>
+                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <a href="#">2 mentions</a>
+                <a href="#">view translation</a>
+                <div>human translated to divish</div>
+                <div>about 2 minutes ago</div>
+              </div>
+              <hr>
+              <div class="mentions">
+                <p>
+                  Michael Lead @michael <br />
+                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <div>computer translation from spanish</div>
+                <a href="#">view original</a>
+                <a href="#">reply</a>
+                <textarea rows="2">@michael</textarea>
+              </div>
+            </li>
+
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
