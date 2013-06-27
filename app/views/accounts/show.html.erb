@@ -9,13 +9,30 @@
         <div class="span9">
           <%= render partial: 'nav', locals: { tab: 'activity' } %>
 
-          <textarea rows="5" placeholder="Type something in your language, we'll translate it for you..."></textarea>
+          <section class="translation-widget">
+            <textarea placeholder="Type something in your language, we'll translate it for you..."></textarea>
 
-          Translation:
-          <input type="radio" name="kind" value="computer" checked>Computer<br>
-          <input type="radio" name="kind" value="human"> Human<br>
-          <input type="radio" name="kind" value="none">No Thanks
-          <button>Tweet</button>
+            <ul>
+              <li>
+                Translation
+              </li>
+              <li>
+                <input type="radio" name="kind" value="computer" id="computer" checked> <label for="computer">Computer</label>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="human" id="human"> <label for="human">Human</label>
+              </li>
+              <li>
+                <input type="radio" name="kind" id="none" value="none"> <label for="none">No thanks</label>
+              </li>
+            </ul>
+            <div class="row span12">
+              <div class="pull-right">
+                <span>140</span>
+                <button class="btn btn-primary">Tweet</button>
+            </div>
+            </div>
+          </section>
 
           <ul class="tweets">
             <li>
@@ -40,10 +57,7 @@
                 <textarea rows="2">@michael</textarea>
               </div>
             </li>
-
-
           </ul>
-
         </div>
       </div>
     </div>
