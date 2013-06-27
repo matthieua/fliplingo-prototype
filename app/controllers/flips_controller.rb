@@ -19,17 +19,20 @@ class FlipsController < ApplicationController
   end
 
   def edit
-    @flip = Flip.find params[:id]
+    load_flip
   end
 
   def update
-    @flip = Flip.find params[:id]
+    load_flip
     if @flip.update_attributes(flip_params)
       redirect_to flips_path
     else
       render :edit
     end
+  end
 
+  def activity
+    load_flip
   end
 
   private
@@ -37,5 +40,8 @@ class FlipsController < ApplicationController
   def flip_params
     params.permit(:flip => [:from, :to, :kind, :notification, :instructions])[:flip]
   end
-end
 
+  def load_flip
+    @flip = Flip.find params[:id]
+  end
+end
