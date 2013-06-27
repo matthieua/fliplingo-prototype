@@ -23,8 +23,9 @@ class FlipsController < ApplicationController
   end
 
   def update
+    @flip = Flip.find params[:id]
     if @flip.update_attributes(flip_params)
-      redirect_to redirect_to flips_path
+      redirect_to flips_path
     else
       render :edit
     end
