@@ -14,9 +14,9 @@ User.create(email: email, language: 'english')
 mathias_id = User.find_by_email(email).id
 
 Account.create([
-  { name: "#{username}", timezone: "london", language_id: Language.find_by_name("english").id, user_id: mathias_id },
-  { name: "#{username}_de", timezone: "berlin", language_id: Language.find_by_name("german").id, user_id: mathias_id },
-  { name: "#{username}_es", timezone: "madrid", language_id: Language.find_by_name("spanish").id, user_id: mathias_id }
+  { name: "#{username}", timezone: "london", language_id: Language.find_by_name("english").id, notifications: 0, user_id: mathias_id },
+  { name: "#{username}_de", timezone: "berlin", language_id: Language.find_by_name("german").id, notifications: 2, user_id: mathias_id },
+  { name: "#{username}_es", timezone: "madrid", language_id: Language.find_by_name("spanish").id, notifications: 8, user_id: mathias_id }
 ])
 
 Flip.create([

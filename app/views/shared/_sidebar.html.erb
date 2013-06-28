@@ -1,11 +1,16 @@
-<ul class="nav nav-list nav-list-vivid">
+<ul class="nav nav-list nav-list-vivid sidebar">
   <li class="<%= active == 'your flips' ? 'active' : '' %>">
     <%= link_to 'Your Flips', flips_path %>
   </li>
   <li class="nav-header">Accounts</li>
   <% current_user.accounts.each do |account| %>
   <li class="<%= active == account.name ? 'active' : '' %>">
-    <%= link_to "@#{account.name}", account_path(account) %>
+    <%= link_to account_path(account) do %>
+      @<%= account.name %>
+      <% if account.notifications > 0 %>
+      <span class="notifications pull-right label  label-inverse"><%= account.notifications %></span>
+      <% end %>
+    <% end %>
   </li>
   <% end %>
   <li class="<%= active == 'new account' ? 'active' : '' %>">

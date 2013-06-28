@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130627131240) do
+ActiveRecord::Schema.define(version: 20130628115641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: true do |t|
-    t.string   "name",        null: false
-    t.string   "timezone",    null: false
-    t.integer  "language_id", null: false
-    t.integer  "user_id",     null: false
+    t.string   "name",                      null: false
+    t.string   "timezone",                  null: false
+    t.integer  "language_id",               null: false
+    t.integer  "user_id",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "notifications", default: 0, null: false
   end
 
   add_index "accounts", ["language_id"], name: "index_accounts_on_language_id", using: :btree
