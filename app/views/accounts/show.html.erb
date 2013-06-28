@@ -30,33 +30,88 @@
               <div class="pull-right">
                 <span>140</span>
                 <button class="btn btn-primary">Tweet</button>
-            </div>
+              </div>
             </div>
           </section>
 
           <ul class="tweets">
-            <li>
-              <div class="tweet">
-                <p>
-                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <li class="tweet row">
+              <div class="tweet-content content">
+                <p class="source">
+                  If you're planning on visiting TechHub this coming Monday why not come along to the #cavecastlep product launch at 2pm in room 1.03.
                 </p>
-                <a href="#">2 mentions</a>
-                <a href="#">view translation</a>
-                <div>human translated to english</div>
-                <div>about 2 minutes ago</div>
-                <div>status: published</div>
+
+                <ul class="options">
+                  <li class="status"><i class="fui-user"></i> Translation in progress...</li>
+                  <li class="action pull-right cancel"><a href="#"><i class="fui-cross"></i> Cancel translation</a></li>
+                </ul>
               </div>
-              <hr>
-              <div class="mentions">
-                <p>
-                  Michael Lead @michael <br />
-                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </li>
+            <li class="tweet row">
+              <div class="tweet-content content">
+                <p class="source">
+                  Please Retweet my latest Berlin Startup Girl post: Croissants and Awkward Glances: A Tale of Networking in Berlin <a href="http://ow.ly/mrGh5">ow.ly/mrGh5</a>
                 </p>
-                <div>computer translation from spanish</div>
-                <a href="#">view original</a>
-                <a href="#">reply</a>
-                <textarea rows="2">@michael</textarea>
+
+                <p class="translation">
+                  Por favor Retweet mi última Berlín inicio Chica mensaje: Croissants y miradas incómodas: A Tale of Networking en Berlín <a href="http://ow.ly/mrGh5">ow.ly/mrGh5</a>
+                </p>
+                <ul class="options">
+                  <li class="status">Published 2 hours ago</li>
+                  <li class="action translation-link pull-right"><a href="#"><i class="fui-user"></i> Spanish translation</a></li>
+                  <li class="action source-link pull-right"><a href="#">Original tweet</a></li>
+                </ul>
               </div>
+              <ul class="mentions">
+                <li class="mention" data-author="elxavi">
+                  <div class="content">
+                    <div class="row">
+                      <div class="avatar span2"></div>
+                      <div class="span8">
+                        <p class="author">
+                          Xavi Sanchez @elxavi
+                        </p>
+                        <p class="source">
+                          <a href="#">@betahaus_es</a> Gran artículo. ¿Estás pensando en alojarse en Berlín?
+                        </p>
+                        <p class="translation">
+                          <a href="#">@betahaus_es</a> Great article. Are you thinking of staying in Berlin?
+                        </p>
+                      </div>
+                    </div>
+                    <ul class="options">
+                      <li class="status">Published 1 minute ago</li>
+                      <li class="action source-link pull-right"><a href="#"> Original tweet</a></li>
+                      <li class="action translation-link pull-right"><a href="#"><i class="fui-gear"></i> English translation</a></li>
+                      <li class="action pull-right reply"><a href="#"><i class="fui-new"></i> Reply</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="mention" data-author="cavalli">
+                  <div class="content">
+                    <div class="row">
+                      <div class="avatar span2" style="background-color: #9b59b6;"></div>
+                      <div class="span8">
+                        <p class="author">
+                          Roberto Cavalli @cavalli
+                        </p>
+                        <p class="source">
+                          <a href="#">@betahaus_es</a> Me encanta tu historia, ¿dónde vives?
+                        </p>
+                        <p class="translation">
+                          <a href="#">@betahaus_es</a> I love your story, where do you live ?
+                        </p>
+                      </div>
+                    </div>
+                    <ul class="options">
+                      <li class="status">Published 10 minutes ago</li>
+                      <li class="action source-link pull-right"><a href="#"> Original tweet</a></li>
+                      <li class="action translation-link pull-right"><a href="#"><i class="fui-gear"></i> English translation</a></li>
+                      <li class="action pull-right reply"><a href="#"><i class="fui-new"></i> Reply</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -64,3 +119,82 @@
     </div>
   </div>
 </div>
+
+<div class="reply-widget">
+  <section class="translation-widget">
+    <textarea class="span10">@cavalli </textarea>
+    <ul>
+      <li>
+        Translation
+      </li>
+      <li>
+        <input type="radio" name="kind_reply" value="computer" id="computer_mention" checked> <label for="computer_mention">Computer</label>
+      </li>
+      <li>
+        <input type="radio" name="kind_reply" value="human" id="human_mention"> <label for="human_mention">Human</label>
+      </li>
+      <li>
+        <input type="radio" name="kind_reply" id="none_mention" value="none"> <label for="none_mention">No thanks</label>
+      </li>
+    </ul>
+    <div class="row">
+      <div class="pull-right">
+        <span>140</span>
+        <a href="#" class="btn btn-primary">Reply</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  $(function() {
+    $('.translation-link').on('click', function(event) {
+      event.preventDefault();
+
+      $content = $(this).parents('.content').first();
+      $content.find('.translation').show();
+      $content.find('.source').hide();
+      $content.find('.source-link').show();
+      $(this).hide();
+    });
+
+    $('.source-link').on('click', function(event) {
+      event.preventDefault();
+
+      $content = $(this).parents('.content').first();
+      $content.find('.translation').hide();
+      $content.find('.source').show();
+      $content.find('.translation-link').show();
+      $(this).hide();
+    });
+
+
+    $replyWidget = $('.reply-widget');
+    $('.reply').on('click', function(event) {
+      event.preventDefault();
+
+      $mention = $(this).parents('.mention').first();
+      if ($mention.find('.translation-widget').length) {
+        $mention.find('.translation-widget').show();
+      } else {
+        $mention.append($replyWidget.html());
+        $mention.find('textarea').focus().text('@' + $mention.data('author') + ' ');
+      }
+      $(this).hide();
+      $mention.find('.hide').show();
+    });
+
+    $('.mention .btn').live('click', function(event) {
+      event.preventDefault();
+
+      $mention = $(this).parents('.mention').first();
+      $mention.find('.translation-widget').hide();
+    });
+
+    $('.tweet .cancel').live('click', function(event) {
+      event.preventDefault();
+
+      $(this).parents('.tweet').remove();
+    });
+  });
+</script>

@@ -1,14 +1,4 @@
-//
-// This is a manifest file that'll be compiled into application.css, which will include all the files
-// listed below.
-//
-// Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
-// or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
-//
-// You're free to add application-wide styles to this file and they'll appear at the top of the
-// compiled file, but it's generally better to create a new file per style scope.
-//
-//= require 'bootstrap'
+d//= require 'bootstrap'
 //= require 'bootstrap-responsive'
 //= require 'flat-ui'
 //= require_self
@@ -190,7 +180,7 @@ form
         color: #AEB6BF
         text-transform: uppercase
 
-  button
+  .btn
     margin-left: 20px
 
 .sidebar
@@ -198,10 +188,63 @@ form
     .notifications
       background-color: #F6FBFE
       color: #34495E
+
 .tweets
-  margin: 0
+  margin-top: 80px
+  ul
+    margin: 0
+    li
+      list-style: none
+      display: inline
   .tweet
     list-style: none
+    .options
+      .pull-right
+        margin-left: 10px
+      .status
+        color: #AEB6C2
+    .tweet-content
+      margin-top: 40px
+      width: 710px
+      background-color: #ECEEF0
+      padding: 20px
+      border-radius: 6px
+      .translation
+        display: none
+      .source-link
+        display: none
+    .mentions
+      margin: 0 0 20px 40px
+      width: 710px
+      p
+        font-size: 90%
+
+      .mention
+        margin: 20px
+        .content
+          padding: 20px
+          background-color: #f5f6f7
+          border-radius: 6px
+          .translation-link
+            display: none
+          .source
+            display: none
+          .row
+            margin: 0
+        .avatar
+          width: 50px
+          height: 50px
+          background-color: #f1c40f
+        textarea
+          height: 124px
+          margin: 10px 0
+
+
+.reply-widget
+  display: none
+
+
+
 
 
 footer
