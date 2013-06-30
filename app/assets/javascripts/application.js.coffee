@@ -21,10 +21,15 @@
 #= require 'jquery.tagsinput'
 #= require 'jquery.placeholder'
 #= require 'jquery.stacktable'
+#= require 'jquery-minicount'
 #= require 'custom'
 #= require_self
 
 
 $ ->
   $("select").selectpicker({style: 'btn btn-inverse', menuStyle: 'dropdown-inverse'})
+  $('textarea:first').miniCount({
+    countdown: true,
+    max: 140
+  })
 
