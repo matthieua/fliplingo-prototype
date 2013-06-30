@@ -9,28 +9,33 @@
           <div class="span9">
             <%= render partial: 'nav', locals: { tab: 'activity' } %>
 
-            <section class="translation-widget">
-              <textarea placeholder="Type something in plain <%= current_user.language.capitalize %>, we'll translate it and publish it for you..."></textarea>
-              <ul>
-                <li>
-                  Translation
-                </li>
-                <li>
-                  <input type="radio" name="kind" value="computer" id="computer" checked> <label for="computer"><i class="fui-gear"></i></label>
-                </li>
-                <li>
-                  <input type="radio" name="kind" value="human" id="human"> <label for="human"><i class="fui-user"></i></label>
-                </li>
-                <li>
-                  <input type="radio" name="kind" id="none" value="none"> <label for="none"><i class="fui-cross"></i></label>
-                </li>
-              </ul>
-              <div class="row span12">
-                <div class="pull-right">
-                  <button class="btn btn-primary">Tweet</button>
-                </div>
+
+            <%= form_for @translation, url: { controller: :translations }, html: { class: 'translation-widget' } do |f| %>
+
+            <%= f.text_area(:source, placeholder: "Type something in plain #{current_user.language.capitalize}, we'll translate it and publish it for you...") %>
+            <%= f.hidden_field :account_id %>
+            <ul>
+              <li>
+                Translation
+              </li>
+              <li>
+                <input type="radio" name="translation[kind]" value="computer" id="computer" checked> <label for="computer"><i class="fui-gear"></i></label>
+              </li>
+              <li>
+                <input type="radio" name="translation[kind]" value="human" id="human"> <label for="human"><i class="fui-user"></i></label>
+              </li>
+              <li>
+                <input type="radio" name="translation[kind]" id="none" value="none"> <label for="none"><i class="fui-cross"></i></label>
+              </li>
+            </ul>
+            <div class="row span12">
+              <div class="pull-right">
+                <%= f.submit 'Tweet', class: "btn btn-primary" %>
               </div>
-            </section>
+            </div>
+
+            <% end %>
+
 
             <ul class="translations">
               <%= render partial: 'translations/translation', collection: @translations %>
@@ -117,4 +122,4 @@
         $(this).hide();
       });
     });
-  </script>
+</script>

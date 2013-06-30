@@ -28,7 +28,7 @@
 
 $ ->
   $("select").selectpicker({style: 'btn btn-inverse', menuStyle: 'dropdown-inverse'})
-  $('textarea:first').miniCount({
+  $('#translation_source').miniCount({
     countdown: true,
     max: 140
   })

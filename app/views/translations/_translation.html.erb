@@ -1,6 +1,6 @@
 <li class="translation">
   <div class="translation-content content row">
-    <div class="clearfix">
+    <div class="clearfix tweet">
       <div class="avatar span2"></div>
       <div class="span10">
         <p class="source">
@@ -16,7 +16,7 @@
       <li class="status"><i class="fui-user"></i> Translation in progress...</li>
       <li class="action pull-right cancel"><a href="#"><i class="fui-cross"></i> Do not publish</a></li>
       <% elsif translation.status == 'published' %>
-      <li class="status"><i class="fui-check"></i> <%= time_ago_in_words(translation.published_at) %></li>
+      <li class="status"><i class="fui-check"></i> Published <%= time_ago_in_words(translation.published_at) %></li>
       <li class="action translation-link pull-right"><a href="#"><i class="fui-user"></i> <%= translation.language.capitalize %> translation</a></li>
       <li class="action source-link pull-right"><a href="#">Original tweet</a></li>
       <% end %>

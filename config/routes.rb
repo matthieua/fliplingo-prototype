@@ -68,5 +68,7 @@ FliplingoPrototype::Application.routes.draw do
     end
   end
 
+  resources :translations
+
   root "flips#index"
 end
