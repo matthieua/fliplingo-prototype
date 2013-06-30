@@ -70,5 +70,11 @@ FliplingoPrototype::Application.routes.draw do
 
   resources :translations
 
+  get 'upgrade' => 'public#upgrade'
+  get 'help' => 'public#help'
+  get 'home' => 'public#home'
+
+  resources :users
+
   root "flips#index"
 end

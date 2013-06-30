@@ -16,12 +16,12 @@
       <div class="navbar-inner">
         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-03">
         </button>
-        <a href="#" class="logo pull-left">Fliplingo</a>
+        <%= link_to 'Fliplingo', home_path, class: 'logo pull-left' %>
         <div class="nav-collapse collapse" id="nav-collapse-02">
           <ul class="nav pull-right">
-            <li><a href="#">Remaining words: 15</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Your profile</a></li>
+            <li><%= link_to 'Upgrade', upgrade_path %></a></li>
+            <li><%= link_to 'Help', help_path %></a></li>
+            <li><%= link_to 'Your profile', user_path(current_user) %></a></li>
           </ul> <!-- /nav -->
         </div><!--/.nav-collapse -->
       </div>
