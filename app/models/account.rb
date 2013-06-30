@@ -1,6 +1,7 @@
 class Account < ActiveRecord::Base
   belongs_to :language
   belongs_to :user
+  has_many :translations
 
   default_scope -> { order('id ASC') }
 

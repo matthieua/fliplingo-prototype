@@ -16,13 +16,13 @@
                   Translation
                 </li>
                 <li>
-                  <input type="radio" name="kind" value="computer" id="computer" checked> <label for="computer"><i class="fui-gear"></i> Computer</label>
+                  <input type="radio" name="kind" value="computer" id="computer" checked> <label for="computer"><i class="fui-gear"></i></label>
                 </li>
                 <li>
-                  <input type="radio" name="kind" value="human" id="human"> <label for="human"><i class="fui-user"></i> Human</label>
+                  <input type="radio" name="kind" value="human" id="human"> <label for="human"><i class="fui-user"></i></label>
                 </li>
                 <li>
-                  <input type="radio" name="kind" id="none" value="none"> <label for="none">No thanks</label>
+                  <input type="radio" name="kind" id="none" value="none"> <label for="none"><i class="fui-cross"></i></label>
                 </li>
               </ul>
               <div class="row span12">
@@ -33,94 +33,8 @@
               </div>
             </section>
 
-            <ul class="tweets">
-              <li class="tweet">
-                <div class="tweet-content content row">
-                  <div class="clearfix">
-                    <div class="avatar span2"></div>
-                    <div class="span10">
-                      <p class="source">
-                        If you're planning on visiting TechHub this coming Monday why not come along to the #cavecastlep product launch at 2pm in room 1.03.
-                      </p>
-                    </div>
-                  </div>
-                  <ul class="options">
-                    <li class="status"><i class="fui-user"></i> Translation in progress...</li>
-                    <li class="action pull-right cancel"><a href="#"><i class="fui-cross"></i> Do not publish</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="tweet">
-                <div class="tweet-content content row">
-                  <div class="clearfix">
-                    <div class="avatar span2"></div>
-                    <div class="span10">
-                      <p class="source">
-                        Please Retweet my latest Berlin Startup Girl post: Croissants and Awkward Glances: A Tale of Networking in Berlin <a href="http://ow.ly/mrGh5">ow.ly/mrGh5</a>
-                      </p>
-
-                      <p class="translation">
-                        Por favor Retweet mi última Berlín inicio Chica mensaje: Croissants y miradas incómodas: A Tale of Networking en Berlín <a href="http://ow.ly/mrGh5">ow.ly/mrGh5</a>
-                      </p>
-                    </div>
-                  </div>
-                  <ul class="options">
-                    <li class="status"><i class="fui-check"></i> Published 2 hours ago</li>
-                    <li class="action translation-link pull-right"><a href="#"><i class="fui-user"></i> Spanish translation</a></li>
-                    <li class="action source-link pull-right"><a href="#">Original tweet</a></li>
-                  </ul>
-                </div>
-                <ul class="mentions">
-                  <li class="mention" data-author="cavalli">
-                    <div class="content">
-                      <div class="row">
-                        <div class="avatar span2" style="background-color: #3498db;"></div>
-                        <div class="span8">
-                          <p class="author">
-                            Xavi Sanchez @elxavi
-                          </p>
-                          <p class="source">
-                            <a href="#">@betahaus_es</a> Gran artículo. ¿Estás pensando en alojarse en Berlín?
-                          </p>
-                          <p class="translation">
-                            <a href="#">@betahaus_es</a> Great article. Are you thinking of staying in Berlin?
-                          </p>
-                        </div>
-                      </div>
-                      <ul class="options">
-                        <li class="status"><i class="fui-check"></i> Published 1 minute ago</li>
-                        <li class="action source-link pull-right"><a href="#"> Original tweet</a></li>
-                        <li class="action translation-link pull-right"><a href="#"><i class="fui-gear"></i> English translation</a></li>
-                        <li class="action pull-right reply"><a href="#"><i class="fui-new"></i> Reply</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="mention" data-author="cavalli">
-                    <div class="content">
-                      <div class="row">
-                        <div class="avatar span2" style="background-color: #9b59b6;"></div>
-                        <div class="span8">
-                          <p class="author">
-                            Roberto Cavalli @cavalli
-                          </p>
-                          <p class="source">
-                            <a href="#">@betahaus_es</a> Me encanta tu historia, ¿dónde vives?
-                          </p>
-                          <p class="translation">
-                            <a href="#">@betahaus_es</a> I love your story, where do you live ?
-                          </p>
-                        </div>
-                      </div>
-                      <ul class="options">
-                        <li class="status"><i class="fui-check"></i>  Published 10 minutes ago</li>
-                        <li class="action source-link pull-right"><a href="#"> Original tweet</a></li>
-                        <li class="action translation-link pull-right"><a href="#"><i class="fui-gear"></i> English translation</a></li>
-                        <li class="action pull-right reply"><a href="#"><i class="fui-new"></i> Reply</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </li>
+            <ul class="translations">
+              <%= render partial: 'translations/translation', collection: @translations %>
             </ul>
           </div>
         </div>
@@ -136,13 +50,13 @@
           Translation
         </li>
         <li>
-          <input type="radio" name="kind_reply" value="computer" id="computer_mention" checked> <label for="computer_mention">Computer</label>
+          <input type="radio" name="kind_reply" value="computer" id="computer_mention" checked> <label for="computer_mention"><i class="fui-gear"></i></label>
         </li>
         <li>
-          <input type="radio" name="kind_reply" value="translator" id="translator_mention"> <label for="translator_mention">Translator</label>
+          <input type="radio" name="kind_reply" value="translator" id="translator_mention"> <label for="translator_mention"><i class="fui-user"></i></label>
         </li>
         <li>
-          <input type="radio" name="kind_reply" id="none_mention" value="none"> <label for="none_mention">No thanks</label>
+          <input type="radio" name="kind_reply" id="none_mention" value="none"> <label for="none_mention"><i class="fui-cross"></i></label>
         </li>
       </ul>
       <div class="row">
@@ -199,7 +113,7 @@
         $mention.find('.translation-widget').hide();
       });
 
-      $('.tweet .cancel').live('click', function(event) {
+      $('.translation .cancel').live('click', function(event) {
         event.preventDefault();
 
         $(this).hide();

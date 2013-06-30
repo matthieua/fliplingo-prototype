@@ -15,8 +15,8 @@ mathias_id = User.find_by_email(email).id
 
 Account.create([
   { name: "#{username}", timezone: "london", language_id: Language.find_by_name("english").id, notifications: 0, user_id: mathias_id },
-  { name: "#{username}_de", timezone: "berlin", language_id: Language.find_by_name("german").id, notifications: 2, user_id: mathias_id },
-  { name: "#{username}_es", timezone: "madrid", language_id: Language.find_by_name("spanish").id, notifications: 8, user_id: mathias_id }
+  { name: "#{username}_de", timezone: "berlin", language_id: Language.find_by_name("german").id, notifications: 0, user_id: mathias_id },
+  { name: "#{username}_es", timezone: "madrid", language_id: Language.find_by_name("spanish").id, notifications: 2, user_id: mathias_id }
 ])
 
 Flip.create([
@@ -24,3 +24,25 @@ Flip.create([
   { from: Account.find_by_name("#{username}").id, to: Account.find_by_name("#{username}_es").id, kind: "computer", user_id: mathias_id },
   { from: Account.find_by_name("#{username}_de").id, to: Account.find_by_name("#{username}_es").id, kind: "computer", user_id: mathias_id }
 ])
+
+Translation.create([
+  {
+    account_id: Account.find_by_name("#{username}_es").id,
+    source: "Please Retweet my latest Berlin Startup Girl post: Croissants and Awkward Glances: A Tale of Networking in Berlin http://ow.ly/mrGh5",
+    source_language: 'english',
+    content: "Por favor Retweet mi última Berlín inicio Chica mensaje: Croissants y miradas incómodas: A Tale of Networking en Berlín http://ow.ly/mrGh5",
+    language: 'spanish',
+    kind: 'human',
+    status: 'published',
+    published_at: (Time.now - 2.hours)
+  },
+  {
+    account_id: Account.find_by_name("#{username}_es").id,
+    source: "If you're planning on visiting TechHub this coming Monday why not come along to the #cavecastlep product launch at 2pm in room 1.03.",
+    source_language: 'english',
+    language: 'spanish',
+    kind: 'human',
+    status: 'processing'
+  }
+  ])
+

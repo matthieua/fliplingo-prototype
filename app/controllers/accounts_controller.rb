@@ -18,6 +18,7 @@ class AccountsController < ApplicationController
 
   def show
     load_account
+    @translations = Translation.where(account_id: @account.id).order('created_at DESC')
   end
 
   def edit
