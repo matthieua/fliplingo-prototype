@@ -46,7 +46,7 @@
                   </div>
                   <ul class="options">
                     <li class="status"><i class="fui-user"></i> Translation in progress...</li>
-                    <!-- <li class="action pull-right cancel"><a href="#"><i class="fui-cross"></i> Cancel translation</a></li> -->
+                    <li class="action pull-right cancel"><a href="#"><i class="fui-cross"></i> Do not publish</a></li>
                   </ul>
                 </div>
               </li>
@@ -202,7 +202,7 @@
       $('.tweet .cancel').live('click', function(event) {
         event.preventDefault();
 
-        $(this).parents('.tweet').remove();
+        $(this).hide();
       });
     });
   </script>
