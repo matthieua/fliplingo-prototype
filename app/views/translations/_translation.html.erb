@@ -22,54 +22,7 @@
       <% end %>
     </ul>
   </div>
-  <!-- <ul class="mentions">
-    <li class="mention" data-author="cavalli">
-      <div class="content">
-        <div class="row">
-          <div class="avatar span2" style="background-color: #3498db;"></div>
-          <div class="span8">
-            <p class="author">
-              Xavi Sanchez @elxavi
-            </p>
-            <p class="source">
-              <a href="#">@betahaus_es</a> Gran artículo. ¿Estás pensando en alojarse en Berlín?
-            </p>
-            <p class="translation">
-              <a href="#">@betahaus_es</a> Great article. Are you thinking of staying in Berlin?
-            </p>
-          </div>
-        </div>
-        <ul class="options">
-          <li class="status"><i class="fui-check"></i> Published 1 minute ago</li>
-          <li class="action source-link pull-right"><a href="#"> Original tweet</a></li>
-          <li class="action translation-link pull-right"><a href="#"><i class="fui-gear"></i> English translation</a></li>
-          <li class="action pull-right reply"><a href="#"><i class="fui-new"></i> Reply</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="mention" data-author="cavalli">
-      <div class="content">
-        <div class="row">
-          <div class="avatar span2" style="background-color: #9b59b6;"></div>
-          <div class="span8">
-            <p class="author">
-              Roberto Cavalli @cavalli
-            </p>
-            <p class="source">
-              <a href="#">@betahaus_es</a> Me encanta tu historia, ¿dónde vives?
-            </p>
-            <p class="translation">
-              <a href="#">@betahaus_es</a> I love your story, where do you live ?
-            </p>
-          </div>
-        </div>
-        <ul class="options">
-          <li class="status"><i class="fui-check"></i>  Published 10 minutes ago</li>
-          <li class="action source-link pull-right"><a href="#"> Original tweet</a></li>
-          <li class="action translation-link pull-right"><a href="#"><i class="fui-gear"></i> English translation</a></li>
-          <li class="action pull-right reply"><a href="#"><i class="fui-new"></i> Reply</a></li>
-        </ul>
-      </div>
-    </li>
-  </ul> -->
+  <ul class="mentions">
+    <%= render partial: 'mentions/mention', collection: translation.mentions %>
+  </ul>
 </li>

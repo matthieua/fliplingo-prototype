@@ -1,0 +1,25 @@
+
+<li class="mention" data-author="<%= mention.twitter_handle %>">
+  <div class="content">
+    <div class="row">
+      <div class="avatar span2 <%= mention.twitter_handle %>"></div>
+      <div class="span8">
+        <p class="author">
+          <%= mention.name %> @<%= mention.twitter_handle %>
+        </p>
+        <p class="source">
+          <%= link_to "@#{mention.reply.account.name}", "http://twitter.com/#{mention.reply.account.name}" %> <%=h auto_link mention.translation.source %>
+        </p>
+        <p class="translation">
+        <%= link_to "@#{mention.reply.account.name}", "http://twitter.com/#{mention.reply.account.name}" %> <%=h auto_link mention.translation.content %>
+        </p>
+      </div>
+    </div>
+    <ul class="options">
+      <li class="status">Posted <%= time_ago_in_words(mention.translation.published_at) %></li>
+      <li class="action source-link pull-right"><a href="#"> Original tweet</a></li>
+      <li class="action translation-link pull-right"><a href="#"><i class="fui-gear"></i> <%= mention.reply.source_language.capitalize %> translation</a></li>
+      <li class="action pull-right reply"><a href="#"><i class="fui-new"></i> Reply</a></li>
+    </ul>
+  </div>
+</li>
