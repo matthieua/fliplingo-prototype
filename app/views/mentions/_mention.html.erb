@@ -16,7 +16,7 @@
       </div>
     </div>
     <ul class="options">
-      <li class="status">Posted <%= time_ago_in_words(mention.translation.published_at) %></li>
+      <li class="status">Posted <%= time_ago_in_words(mention.translation.published_at) %> ago</li>
       <li class="action source-link pull-right"><a href="#"> Original tweet</a></li>
       <li class="action translation-link pull-right"><a href="#"><i class="fui-gear"></i> <%= mention.reply.source_language.capitalize %> translation</a></li>
       <li class="action pull-right reply"><a href="#"><i class="fui-new"></i> Reply</a></li>

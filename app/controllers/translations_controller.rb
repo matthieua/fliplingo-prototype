@@ -6,7 +6,6 @@ class TranslationsController < ApplicationController
 
     case translation.kind
     when 'computer'
-      translation.source_language = translation.language
       translation.content = "Tweet translated in #{translation.language.capitalize}..."
       translation.status = 'published'
       translation.published_at = Time.now

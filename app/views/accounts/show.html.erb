@@ -12,7 +12,7 @@
 
             <%= form_for @translation, url: { controller: :translations }, html: { class: 'translation-widget' } do |f| %>
 
-            <%= f.text_area(:source, placeholder: "Type something in plain #{current_user.language.capitalize}, we'll translate it and publish it for you...") %>
+            <%= f.text_area(:source, placeholder: "Type something in #{current_user.language.capitalize}, we'll translate it and publish it for you...") %>
             <%= f.hidden_field :account_id %>
             <ul>
               <li>

@@ -1,4 +1,4 @@
-username = "betahaus"
+username = "monica"
 email    = "contact@#{username}.com"
 
 Language.create([
@@ -21,8 +21,7 @@ Account.create([
 
 Flip.create([
   { from: Account.find_by_name("#{username}").id, to: Account.find_by_name("#{username}_de").id, kind: "human", user_id: mathias_id },
-  { from: Account.find_by_name("#{username}").id, to: Account.find_by_name("#{username}_es").id, kind: "computer", user_id: mathias_id },
-  { from: Account.find_by_name("#{username}_de").id, to: Account.find_by_name("#{username}_es").id, kind: "computer", user_id: mathias_id }
+  { from: Account.find_by_name("#{username}").id, to: Account.find_by_name("#{username}_es").id, kind: "computer", user_id: mathias_id }
   ])
 
 # Tweets

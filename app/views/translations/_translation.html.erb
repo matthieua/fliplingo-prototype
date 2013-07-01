@@ -16,8 +16,16 @@
       <li class="status"><i class="fui-user"></i> Translation in progress...</li>
       <li class="action pull-right cancel"><a href="#"><i class="fui-cross"></i> Do not publish</a></li>
       <% elsif translation.status == 'published' %>
-      <li class="status"><i class="fui-check"></i> Published <%= time_ago_in_words(translation.published_at) %></li>
-      <li class="action translation-link pull-right"><a href="#"><i class="fui-user"></i> <%= translation.language.capitalize %> translation</a></li>
+      <li class="status"><i class="fui-check"></i> Published <%= time_ago_in_words(translation.published_at) %> ago</li>
+      <li class="action translation-link pull-right"><a href="#">
+      <% if translation.language != translation.source_language %>
+        <% if translation.kind == 'human' %>
+        <i class="fui-user"></i>
+        <% else %>
+        <i class="fui-gear"></i>
+        <% end %>
+         <%= translation.language.capitalize %> translation</a></li>
+       <% end %>
       <li class="action source-link pull-right"><a href="#">Original tweet</a></li>
       <% end %>
     </ul>

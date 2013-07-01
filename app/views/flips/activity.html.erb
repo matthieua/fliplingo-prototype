@@ -1,3 +1,4 @@
+<% to = Account.find(@flip.to) %>
 <div class="container">
   <div class="row">
     <div class="span2">
@@ -11,25 +12,25 @@
           <p>Last 100 actions triggered by this flip.</p>
           <ul class="activity">
             <li>
-              <p>Posted a <a href="#">tweet</a> translated in Spanish to <a href="#" target="_blank">@betahaus_es</a> via human translation.</p>
+              <p>Posted a <a href="#">tweet</a> translated in Spanish to <a href="#" target="_blank">@<%= to.name %></a> via human translation.</p>
               <div class="row">
                 <small class="pull-right">about 17 minutes ago</small>
               </div>
             </li>
             <li>
-              <p>Posted a <a href="#">tweet</a> translated in Spanish to <a href="#" target="_blank">@betahaus_es</a> via human translation.</p>
+              <p>Posted a <a href="#">tweet</a> translated in Spanish to <a href="#" target="_blank">@<%= to.name %></a> via human translation.</p>
               <div class="row">
                 <small class="pull-right">about 20 minutes ago</small>
               </div>
             </li>
             <li>
-              <p>Posted a <a href="#">tweet</a> translated in Spanish to <a href="#" target="_blank">@betahaus_es</a> via human translation.</p>
+              <p>Posted a <a href="#">tweet</a> translated in Spanish to <a href="#" target="_blank">@<%= to.name %></a> via human translation.</p>
               <div class="row">
                 <small class="pull-right">about 2 hours ago</small>
               </div>
             </li>
             <li>
-              <p>Posted a <a href="#">tweet</a> translated in Spanish to <a href="#" target="_blank">@betahaus_es</a> via human translation.</p>
+              <p>Posted a <a href="#">tweet</a> translated in Spanish to <a href="#" target="_blank">@<%= to.name %></a> via human translation.</p>
               <div class="row">
                 <small class="pull-right">about 1 day ago</small>
               </div>
