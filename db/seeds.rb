@@ -1,4 +1,4 @@
-username = "monica"
+username = "betahaus"
 email    = "contact@#{username}.com"
 
 Language.create([
